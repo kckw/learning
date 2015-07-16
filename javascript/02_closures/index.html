@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>My Title</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+
+
+  <script >
+
+    var id = 23;
+
+    function celebrityID () {
+        var id = 999;
+        // We are returning an object with some inner functions​
+        // All the inner functions have access to the outer function's variables​
+        return {
+            getID: function ()  {
+                // This inner function will return the UPDATED celebrityID variable​
+                // It will return the current value of celebrityID, even after the changeTheID function changes it​
+              return id;
+            },
+            setID: function (theNewID)  {
+                // This inner function will change the outer function's variable anytime​
+                id = theNewID;
+            }
+        }
+    }
+    var firstID = celebrityID (); // At this juncture, the celebrityID outer function has returned.​
+    console.log ("firstID a " + firstID.getID()); // 999​
+    firstID.setID(567); // Changes the outer function's variable​
+    console.log ("firstID b " +firstID.getID()); // 567: It returns the updated celebrityId variable 
+
+
+    var secondID = celebrityID ();
+     console.log ("second ID a " + secondID.getID()); // 999​
+  </script>
+
+
+</head>
+
+<body>
+
+	<div class="box1">
+
+		click
+		
+	</div><!-- box1 -->
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>My Title</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+
+
+  <script >
+
+
+    $(document).ready(onReady);
+
+    function onReady(){
+
+
+
+     $('#box1').click(user.clickHandler);
+
+     $('#box2').click(function(){
+
+        //here, 'this' refers to window?
+        user.clickHandler();
+
+     });//click
+
+     $('#box3').click(user.clickHandler.bind(user));
+
+    }//onReady;
+
+
+     var data =[
+            {name:"Mr. Global", age:23},
+            {name:"Miss Global", age:53}
+            ]
+
+         var user = {
+            data:[
+            {name:"T. Woods", age:37},
+            {name:"P. Mickelson", age:43}
+            ],
+            clickHandler:function (event) {
+                var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random number between 0 and 1
+                console.log ('what is this: ' + this );
+                console.log (this.data[randomNum].name + ' ' + this.data[randomNum].age);
+            }//clickhandler
+            }//user
+
+  </script>
+
+
+</head>
+
+<body>
+
+	<div class="box" id="box1" >box 1</div>
+  <div class="box" id="box2">box 2</div>
+  <div class="box" id="box3">box 3</div>
+
+  <p>check console.log</p>
+
+
+
+</body>
+</html>

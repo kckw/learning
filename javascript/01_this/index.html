@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>My Title</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+
+
+  <script >
+
+
+    $(document).ready(onReady);
+
+    function onReady(){
+
+     $('.box1').click(function(){
+
+
+        //here, 'this' refers to window?
+        user.clickHandler();
+
+     });//click
+
+    }//onReady;
+
+
+
+         var user = {
+            data:[
+            {name:"T. Woods", age:37},
+            {name:"P. Mickelson", age:43}
+            ],
+            clickHandler:function (event) {
+            var randomNum = ((Math.random () * 2 | 0) + 1) - 1; // random number between 0 and 1​
+
+
+            // This line is printing a random person's name and age from the data array​
+            console.log (this.data[randomNum].name + ' ' + this.data[randomNum].age);
+            }//clickhandler
+            }//user
+
+  </script>
+
+
+</head>
+
+<body>
+
+	<div class="box1">
+
+		click
+		
+	</div><!-- box1 -->
+
+
+
+
+
+
+</body>
+</html>
